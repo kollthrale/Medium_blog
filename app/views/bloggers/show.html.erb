@@ -5,7 +5,7 @@
 
     </div>
     <div class="col s11">
-  
+      <h1><%= current_user.first_name %>
       <% if current_user.bio.present? %>
         <%= current_user.bio %>
       <%end%>
@@ -15,9 +15,8 @@
       <ul>
         <li><%= link_to post.title, post_path(current_user, post) %></li>
         <%end%>
-      <% else %>
+        <%end%>
         <h5><%= link_to 'Write Post', new_post_path(current_user) %></h5>
-      <%end%>
     </div>
   </div>
 

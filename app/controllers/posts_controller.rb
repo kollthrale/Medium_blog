@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-  	@posts = post.where(user_id: current_user.id)
+  	redirect_to root_path
+  	#@posts = post.where(user_id: current_user.id)
   end
 
   def show
@@ -41,7 +42,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-  	params.require(:post).permit(:name, :goal, :user_id)
+  	params.require(:post).permit(:title, :content, :user_id)
   end
 
   def find_post

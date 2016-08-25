@@ -1,6 +1,7 @@
 class BloggersController < ApplicationController
 	before_action :find_blogger, except: [:index, :new, :create]
-  
+
+
   def index
   end
 
@@ -16,5 +17,3 @@ class BloggersController < ApplicationController
   def find_blogger
   	@blogger = current_user.bloggers.find(params[:id])
   end
-
-end

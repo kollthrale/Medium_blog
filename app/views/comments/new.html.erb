@@ -1,2 +1,8 @@
-<h1>Comments#new</h1>
-<p>Find me in app/views/comments/new.html.erb</p>
+<h1>new comment</h1>
+
+<%= render(partial: 'comment_form') %>
+
+<%= link_to 'Back', post_path(@comment) %>
+
+<%= link_to "Show list", list_path(post) %>
+	<br />

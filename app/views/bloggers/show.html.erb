@@ -5,7 +5,7 @@
 
     </div>
     <div class="col s11">
-      <h4 class="black-text"><%= current_user.first_name current_user.last_name %></h4>
+      <h4 class="black-text"><%= current_user.first_name %></h4>
       <% if current_user.bio.present? %>
         <%= current_user.bio %>
       <%end%>
@@ -13,10 +13,10 @@
       <% if @posts.any? %>
         <% @posts.each do |post| %>
       <ul>
-        <li><%= link_to post.title, blogger_post_path(current_user, post) %></li>
+        <li><%= link_to post.title, post_path(current_user, post) %></li>
         <%end%>
       <% else %>
-        <h5><%= link_to 'Write Post', new_blogger_post_path(current_user) %></h5>
+        <h5><%= link_to 'Write Post', new_post_path(current_user) %></h5>
       <%end%>
     </div>
   </div>

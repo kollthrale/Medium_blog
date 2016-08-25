@@ -1,9 +1,7 @@
 class BloggersController < ApplicationController
-		before_action :find_blogger, except: [:index, :new, :create]
-  before_action :authenticate_user!
+	before_action :find_blogger, except: [:index, :new, :create]
   
   def index
-  	@bloggers = blogger.where(user_id: current_user.id)
   end
 
   def show

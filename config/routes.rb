@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :bloggers do
-  		resources :posts do
-  			resources :comments 
-  		end
-  	end
+  resources :posts do
+    resources :comments 
+  end
+  resources :bloggers
   
   devise_for :users, controllers: {
   	registrations: 'users/registrations'

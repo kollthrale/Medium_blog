@@ -12,3 +12,14 @@
     </div>
   </div>
 </div>
+
+
+<div>
+<%= will_paginate @posts %>
+<% @post.each do |post| %>
+<div> 
+<%= @post.title %>
+</div>
+<% end %>
+<%= will_paginate @posts %>
+</div>

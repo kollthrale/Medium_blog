@@ -1,9 +1,11 @@
 class PostsController < ApplicationController
+
 	before_action :find_post, except: [:index, :new, :create]
   before_action :authenticate_user!
   
   def index
   	redirect_to root_path
+    @posts = Post.all.paginate(:page => params[:page], :per_page => 5)
   	#@posts = post.where(user_id: current_user.id)
   end
 

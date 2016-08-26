@@ -2,6 +2,16 @@
 
 @import "commontator/application";
 
+.nav-wrapper {
+  background-color: #757575;
+}
+.nav-white {
+  background-color: white;
+}
+.nav-white a {
+  color: black;
+}
+
 #topnav {
   height: 30px;
   margin: 0 10px;
@@ -13,4 +23,7 @@
 #topnav li {
   display: inline;
   padding-left: 10px;
+}
+footer.page-footer {
+  background-color: #757575;
 }

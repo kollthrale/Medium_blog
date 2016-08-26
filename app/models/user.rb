@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, dependent: :destroy
-
+  has_one :image, dependent: :destroy
   has_attached_file :image,
                     styles: { thumb: ["64x64#", :jpg],
                           original: ['500x500>', :jpg] },

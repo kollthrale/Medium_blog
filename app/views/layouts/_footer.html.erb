@@ -1,0 +1,28 @@
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Mediocre</h5>
+        <p class="grey-text text-lighten-4">Write stories, inform, teach, and Share</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Menu</h5>
+        <ul>
+          <% if user_signed_in? %>
+            <li><%= link_to 'Account Home', blogger_path(current_user),class: "grey-text text-lighten-3" %></li>
+            <li><%= link_to 'Edit Account', edit_user_registration_path,class: "grey-text text-lighten-3"%></li>
+            <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "grey-text text-lighten-3" %></li>
+          <% else %>
+            <li><%= link_to 'Sign Up Now!', new_user_registration_path %></li>
+            <li><%= link_to 'Sign In', new_user_session_path%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2014 Mediocre
+    </div>
+  </div>
+</footer>

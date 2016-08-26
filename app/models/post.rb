@@ -4,5 +4,5 @@ class Post < ApplicationRecord
 	validates_presence_of :title, :content
 
 	acts_as_commontable
-
+	has_attached_file :image
 end

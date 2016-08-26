@@ -14,6 +14,16 @@
   </div>
 
   <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.text_area :bio, placeholder: 'Short snippit about you or your blog' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, 'Add a profile picture'%>
+    <%= f.file_field :image%>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email %>
   </div>

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 	before_action :find_post, except: [:index, :new, :create]
-  before_action :authenticate_user!
-  
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   def index
   	redirect_to root_path
   	#@posts = post.where(user_id: current_user.id)

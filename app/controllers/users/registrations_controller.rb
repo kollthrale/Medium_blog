@@ -44,6 +44,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:last_name])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:bio])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:image])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -51,6 +52,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name])
     devise_parameter_sanitizer.permit(:account_update, keys: [:last_name])
     devise_parameter_sanitizer.permit(:account_update, keys: [:bio])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:image])
   end
 
   # The path used after sign up.
@@ -66,12 +68,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def sign_up_params
-    params.require(:user).permit(:first_name, :last_name, :bio, :email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :bio, :image, :email, :password, :password_confirmation)
 
   end
 
   def account_update_params
-    params.require(:user).permit(:first_name, :last_name, :bio, :email, :password, :password_confirmation, :current_password)
+    params.require(:user).permit(:first_name, :last_name, :bio, :image, :email, :password, :password_confirmation, :current_password)
 
   end
 

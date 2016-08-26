@@ -1,0 +1,10 @@
+
+<div id="topnav" class="row">
+    <div class="nav-wrapper">
+        <ul>
+        <% if current_user %>
+          <li><%=link_to 'Write Post', new_post_path(current_user) %></li>
+        <% end %>
+        </ul>
+    </div>
+</div>

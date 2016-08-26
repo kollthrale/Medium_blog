@@ -1,2 +1,16 @@
 @import "materialize";
+
 *= require commontator/application
+
+#topnav {
+  height: 30px;
+  margin: 0 10px;
+}
+#topnav a {
+  color: #000;
+  text-align: right;
+}
+#topnav li {
+  display: inline;
+  padding-left: 10px;
+}

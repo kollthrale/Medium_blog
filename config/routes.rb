@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :posts do
-    resources :comments 
+    resources :comments
   end
   resources :bloggers
-  
+
   devise_for :users, controllers: {
   	registrations: 'users/registrations'
   }
-  mount Commontator::Engine => '/commontator'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

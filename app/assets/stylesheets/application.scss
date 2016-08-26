@@ -1,6 +1,6 @@
 @import "materialize";
 
-*= require commontator/application
+@import "commontator/application";
 
 #topnav {
   height: 30px;

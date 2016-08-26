@@ -3,8 +3,9 @@
     <%= render(partial: 'user_nav') %>
   <div class="col s12">
     <h4 class="center"><%= current_user.first_name %> <%= current_user.last_name %>
-                                            <%= image_tag(current_user.image.url(:thumb))%></h4>
+                                            <%= image_tag current_user.image.url(:thumb), class: "circle responsive-img"%></h4>
       <h5><%= current_user.bio %></h5>
+      
   </div>
 
   <div class="col s12 m8 offset-m2">

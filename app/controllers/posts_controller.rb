@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
 
+  before_action :authenticate_user!, except: :show
 	before_action :find_post, except: [:index, :new, :create]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-
+  
   def index
-  	redirect_to root_path
-    @posts = Post.all.paginate(:page => params[:page], :per_page => 5)
-  	#@posts = post.where(user_id: current_user.id)
+  	# posts = Post.where(user_id:current_user.id)
+  	@posts = Post.all
   end
 
   def show
@@ -48,7 +47,7 @@ class PostsController < ApplicationController
   end
 
   def find_post
-  	@post = current_user.posts.find(params[:id])
+  	@post = Post.find(params[:id])
   end
 
 end

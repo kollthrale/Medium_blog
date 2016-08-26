@@ -1,14 +1,13 @@
 class PostsController < ApplicationController
-
   before_action :authenticate_user!, except: :show
 	before_action :find_post, except: [:index, :new, :create]
-  
   def index
   	# posts = Post.where(user_id:current_user.id)
   	@posts = Post.all
   end
 
   def show
+    #commontator_thread_show(post)
   end
 
   def new

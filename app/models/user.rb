@@ -13,4 +13,5 @@ class User < ApplicationRecord
                     url: "/system/:hash.:extension", hash_secret: "abc123"
   validates_attachment :image, presence: true,
                        content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
+    acts_as_commontator
 end

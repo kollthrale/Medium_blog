@@ -5,6 +5,7 @@
 <div>
 	<p><%= @post.content %></p>
 </div>
+<%= commontator_thread(@commontable) %>
 
 <br />
 <%= link_to "Edit Post", edit_post_path(@post) %>
